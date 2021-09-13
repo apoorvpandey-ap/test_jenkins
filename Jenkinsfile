@@ -16,5 +16,5 @@ agent any
                 echo 'Deploying....'
             }
         }
-    }
+    
 }
