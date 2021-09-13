@@ -1,38 +1,20 @@
-pipeline 
-{
-    agent any
+agent any
 
-    stages 
-	{
-        stage('Build') 
-		{
-            steps 
-			{
-                echo 'Build App'
-            }
-		}	
-			stage('Test') 
-		{
-            steps 
-			{
-                echo 'Test App'
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
             }
         }
-		
-		stage('Deploy') 
-		{
-            steps 
-			{
-                echo 'Deploy App'
+        stage('Test') {
+            steps {
+                echo 'Testing..'
             }
         }
-	}	
-		post
-		{
-			always
-		    {
-			  emailext body: 'Summary', subject: 'Pipeline status', to: 'apoorvcreate@gmail.com'
-			}
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
         }
-    
+    }
 }
